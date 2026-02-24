@@ -1,66 +1,94 @@
 # Content Planning App
 
-## Pages & Features
+Plan, schedule, and manage your content pipeline across channels.
 
-### 1. Dashboard
-- Content calendar snapshot (this week)
-- Publishing pipeline status (draft, review, scheduled, published)
-- Content performance highlights
-- Upcoming deadlines
-- Team activity feed
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Content Calendar
-- Month / week / day view
-- Drag-and-drop scheduling
-- Color-coded by content type, channel, or status
-- Filter by author, channel, campaign
-- Multi-channel view (blog, social, email, video)
+## Tech Stack
 
-### 3. Content Items
-- Content list with search, type, status, channel filters
-- Create content (title, type, channel, author, due date, brief)
-- Content detail: brief, draft, attachments, comments, approval status
-- Rich text editor for drafts
-- Version history
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Campaigns
-- Group content items into campaigns
-- Campaign goals & KPIs
-- Campaign timeline with milestones
-- Cross-channel content coordination
+## Getting Started
 
-### 5. Ideas & Backlog
-- Idea board (kanban: idea → approved → in-progress → done)
-- Submit idea with description & target audience
-- Upvoting & commenting on ideas
-- Convert idea to content item
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Channels & Platforms
-- Define publishing channels (blog, Instagram, Twitter/X, LinkedIn, YouTube, newsletter)
-- Channel-specific requirements (character limits, image sizes)
-- Publishing guidelines per channel
+## License
 
-### 7. Workflows & Approvals
-- Custom workflow per content type (write → review → design → approve → publish)
-- Assign reviewers / approvers
-- Approval / revision comments
-- Automated status progression
+MIT © Mehdi Nabhani
 
-### 8. Assets & Media
-- Media library (images, videos, graphics)
-- Upload & organize assets with tags
-- Link assets to content items
-- Image editing (crop, resize) inline
+---
 
-### 9. Analytics
-- Content performance by channel (views, clicks, shares, engagement)
-- Best performing content ranking
-- Publishing consistency metrics
-- Channel comparison
+<details>
+<summary>📋 Original Feature Spec</summary>
 
-### 10. Settings
-- Team members & roles
-- Content types & categories
-- Publishing channel configuration
-- Notification preferences
-- Brand guidelines upload
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
